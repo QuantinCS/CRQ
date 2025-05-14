@@ -57,6 +57,17 @@ risk_confidence_table <- table(df$risk, df$Confidence)
 #risk_confidence_proportions <- prop.table(risk_confidence_table, margin = 1) * 100
 risk_confidence_proportions <- round(prop.table(risk_confidence_table, margin = 1) * 100, 1)
 
+risk_confidence_table_All <- table(df$Confidence)
+In <- risk_confidence_table_All['In']
+Out <- risk_confidence_table_All['Out']
+
+correct <- round(In / (In + Out) * 100, 1)
+incorrect <- round(Out / (In + Out) * 100, 1)
+
+
+#risk_confidence_proportions <- prop.table(risk_confidence_table, margin = 1) * 100
+#risk_confidence_proportions_All <- round(prop.table(risk_confidence_table_All, margin = 1) * 100, 1)
+
 
 #ggplot() + geom_histogram(data = df, aes(x=x, y=..count..,fill=risk),
 #colour="white", bínwidth = 1000, boundary = 0)+
@@ -85,4 +96,8 @@ ggplot() + geom_histogram(data = df, aes(x=x, y=..count..,fill=RealRank),
   annotate(geom="label", x=HighestHig/1.2, y=n/8, label=paste(risk_confidence_proportions["High","In"]," %"),
            color="black") +
   annotate(geom="label", x=HighestHig/3, y=n/8, label=paste(risk_confidence_proportions["High","Out"]," %"),
-         color="black")
+         color="black") +
+  annotate(geom="label", x=HighestHig/3, y=n/1.2, label=paste(correct," % of correct cases"),
+           color="black") +
+  annotate(geom="label", x=HighestHig/1.4, y=n/1.2, label=paste(incorrect," % of incorrect cases"),
+           color="black")
