@@ -28,6 +28,31 @@ smi = runif(n, min(mi), max(mi))   #random numbers in med impact range
 shp = runif(n, min(hp), max(hp))   #random numbers in high probability range 
 shi = runif(n, min(hi), max(hi))   #random numbers in highimpact range
 
+#slp_hist = hist(slp, breaks = seq(0, 0.2), col = c("blue", "lightblue"), ylab = "number of pipets", xlab = "volume of pipet (mL)", main = NULL)
+
+slp_hist = hist(slp, col = c("blue", "lightblue","cyan"), 
+                ylab = "number of random cases", 
+                xlab = "probability of cases", main = NULL)
+
+
+slp_hist = hist(slp, col = c("blue", "lightblue","cyan"), 
+                ylim = c(39500, 40500),
+                ylab = "number of random cases", 
+                xlab = "probability of cases", main = NULL)
+
+smp_hist = hist(smp, col = c("red", "coral2","brown"), 
+                ylab = "number of random cases", 
+                xlab = "probability of cases", main = NULL)
+
+
+smp_hist = hist(smp, col = c("red", "coral2","brown"), 
+                ylim = c(39500, 40500),
+                ylab = "number of random cases", 
+                xlab = "probability of cases", main = NULL)
+
+
+
+
 x <- seq(1,10000)
 
 

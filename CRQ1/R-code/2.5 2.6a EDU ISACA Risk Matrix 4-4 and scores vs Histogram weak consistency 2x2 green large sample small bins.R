@@ -52,25 +52,25 @@ df = rbind(dlr, dmr, dsr, dhr)      #bind all 4 data frames into one dataset
 
 
 dlr1 = data.frame(x=lr1)           #data frame with low risks and label "R1" (rating 1)
-dlr1$r_rating = "R1"
+dlr1$r_rating = " R1"
 
 dlr2 = data.frame(x=lr2)           #data frame with low risks and label "R2" (rating 2)
-dlr2$r_rating = "R2"
+dlr2$r_rating = " R2"
 
 dmr3 = data.frame(x=mr3)           #data frame with medium risks and label "R3" (rating 3)  
-dmr3$r_rating = "R3"
+dmr3$r_rating = " R3"
 
 dmr4 = data.frame(x=mr4)           #data frame with medium risks and label "R4" (rating 4)  
-dmr4$r_rating = "R4"
+dmr4$r_rating = " R4"
 
 dsr6 = data.frame(x=sr6)           #data frame with significant risks and label "R6" (rating 6)  
-dsr6$r_rating = "R6"
+dsr6$r_rating = " R6"
 
 dsr8 = data.frame(x=sr8)           #data frame with significant risks and label "R8" (rating 8)  
-dsr8$r_rating = "R8"
+dsr8$r_rating = " R8"
 
 dsr9 = data.frame(x=sr9)           #data frame with significant risks and label "R9" (rating 9)  
-dsr9$r_rating = "R9"
+dsr9$r_rating = " R9"
 
 dhr12 = data.frame(x=hr12)         #data frame with high risks and label "R12" (rating 12)  
 dhr12$r_rating = "R12"
@@ -93,13 +93,13 @@ scale_fill_manual(values = c("#CC0033","#33FF00","#FFFF33","#FFBF00")) +
 # Plotting using ggplot2 with risk ratings
 ggplot(dfr, aes(x = x, fill = r_rating)) + 
   geom_histogram(binwidth = 1000, boundary = 0, colour = "white") +
-  scale_fill_manual(values = c("R1" = "#98FB98", 
-                               "R2" = "#32CD32", 
-                               "R3" = "#228B22", 
-                               "R4" = "#006400",
-                               "R6" = "#FFFACD",
-                               "R8" = "#FFFF33",
-                               "R9" = "#FFBF00",
+  scale_fill_manual(values = c(" R1" = "#98FB98", 
+                               " R2" = "#32CD32", 
+                               " R3" = "#228B22", 
+                               " R4" = "#006400",
+                               " R6" = "#FFFACD",
+                               " R8" = "#FFFF33",
+                               " R9" = "#FFBF00",
                                "R12" = "#FF8C00", 
                                "R16" = "#CC0033")) +
   xlab("Yc") +
